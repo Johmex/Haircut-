@@ -1,0 +1,589 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin - Wealth Path Academy 2026</title>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --gold: #f7d774;
+      --gold2: #d7ad52;
+      --muted: #9aa3a0;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: white;
+      font-family: Inter, Arial, sans-serif;
+    }
+
+    header {
+      background: #141414cc;
+      backdrop-filter: blur(10px);
+      padding: 16px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #222;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.2rem;
+      color: var(--gold);
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      border: 1px solid #333;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 0 16px 40px;
+    }
+
+    .panel {
+      background: var(--card);
+      border: 1px solid #222;
+      border-radius: 14px;
+      padding: 18px;
+      margin-bottom: 18px;
+    }
+
+    h2 { margin: 0 0 12px; }
+
+    .row-add {
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr 0.6fr 1.2fr 1fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    @media(max-width:1100px) {
+      .row-add { grid-template-columns: 1fr 1fr; }
+    }
+
+    label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    input, select, button, textarea {
+      font: inherit;
+      padding: 10px;
+      border-radius: 9px;
+      border: 1px solid #2a2a2a;
+      background: #0f0f0f;
+      color: white;
+      width: 100%;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 90px;
+      margin-top: 6px;
+    }
+
+    input[type=file] { padding: 6px; }
+
+    input[type=checkbox] {
+      width: 20px;
+      height: 20px;
+    }
+
+    button {
+      cursor: pointer;
+      background: var(--gold);
+      color: #000;
+      font-weight: 700;
+      border: 0;
+    }
+
+    button.secondary {
+      background: #222;
+      color: white;
+    }
+
+    button.danger { background: #a82d2d; }
+
+    .table-wrap { overflow-x: auto; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 900px;
+    }
+
+    th, td {
+      padding: 10px;
+      border-bottom: 1px solid #222;
+      text-align: left;
+      vertical-align: middle;
+    }
+
+    th {
+      color: var(--gold);
+      font-size: 0.8rem;
+    }
+
+    .img-prev {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 8px;
+      background: #222;
+    }
+
+    .message {
+      margin: 10px 0;
+      color: var(--gold);
+    }
+
+    #adminArea { display: none; }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Wealth Path Academy • Admin</h1>
+  <a href="index.html">View Store</a>
+</header>
+
+<main>
+
+  <section class="panel" id="loginPanel">
+    <h2>Admin Login</h2>
+
+    <form id="loginForm" style="display:grid;gap:10px;max-width:400px">
+      <input id="email" type="email" required placeholder="Admin email">
+      <input id="password" type="password" required placeholder="Password">
+      <button type="submit">Sign In</button>
+    </form>
+
+    <p id="loginMessage" class="message"></p>
+  </section>
+
+  <section id="adminArea">
+
+    <div class="panel">
+      <h2>Add Product — One Row</h2>
+
+      <form id="productForm">
+        <input id="productId" type="hidden">
+        <input type="hidden" id="image_url">
+
+        <!-- NEW: Product Description input -->
+        <label style="margin-bottom:12px;">
+          Product Description
+          <textarea
+            id="description"
+            placeholder="Describe this course or digital product..."
+          ></textarea>
+        </label>
+
+        <div class="row-add">
+
+          <label>
+            Product Name
+            <input id="name" required placeholder="Crypto Fundamentals">
+          </label>
+
+          
+            
+<label for="category">Product Category
+<select id="category" required>
+  <option value="">Choose a category</option>
+  <option value="Freelancing">Freelancing</option>
+  <option value="Forex Education">Forex Education</option>
+  <option value="Digital Marketing">Digital Marketing</option>
+  <option value="Content Creation">Content Creation</option>
+  <option value="Online Business">Online Business</option>
+  <option value="Dropshipping">Dropshipping</option>
+  <option value="AI Tool">AI Tool</option>
+</select>
+</label>
+
+          <label>
+            Price ₦
+            <input id="price" type="number" min="0" step="0.01" required value="4900">
+          </label>
+
+          <label>
+            Selar Link
+            <input id="selar_link" type="url" placeholder="https://selar.co/..." required>
+          </label>
+
+          <label>
+            Image
+            <input id="image_file" type="file" accept="image/*">
+          </label>
+
+          <label style="display:flex;align-items:center;gap:6px;">
+            Featured
+            <input id="featured" type="checkbox">
+          </label>
+
+          <button id="saveButton" type="submit">+ Add</button>
+        </div>
+
+        <div style="display:flex;gap:8px;margin-top:12px;align-items:center;flex-wrap:wrap;">
+          <img
+            id="preview"
+            alt="Product preview"
+            style="display:none;width:80px;height:80px;object-fit:cover;border-radius:8px;"
+          >
+
+          <button type="button" id="cancelEdit" class="secondary" hidden>
+            Cancel Edit
+          </button>
+
+          <button type="button" id="logoutButton" class="secondary">
+            Sign Out
+          </button>
+        </div>
+      </form>
+
+      <p id="adminMessage" class="message"></p>
+    </div>
+
+    <div class="panel">
+      <h2>Existing Products</h2>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Product</th>
+              <th>Category</th>
+              <th>Price</th>
+              <th>Selar Link</th>
+              <th>Featured</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+
+          <tbody id="productRows"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="config.js"></script>
+
+<script>
+const loginPanel = document.getElementById("loginPanel");
+const adminArea = document.getElementById("adminArea");
+const loginMessage = document.getElementById("loginMessage");
+const adminMessage = document.getElementById("adminMessage");
+const productForm = document.getElementById("productForm");
+const productRows = document.getElementById("productRows");
+const cancelEdit = document.getElementById("cancelEdit");
+const preview = document.getElementById("preview");
+
+function showMessage(el, message) {
+  el.textContent = message;
+}
+
+function formatMoney(value) {
+  return new Intl.NumberFormat("en-NG", {
+    style: "currency",
+    currency: "NGN"
+  }).format(Number(value || 0));
+}
+
+function setSignedIn(signedIn) {
+  loginPanel.style.display = signedIn ? "none" : "block";
+  adminArea.style.display = signedIn ? "block" : "none";
+}
+
+async function uploadImage(file) {
+  const fileName = Date.now() + "_" +
+    file.name.replace(/[^a-zA-Z0-9._-]/g, "_");
+
+  const { error } = await supabaseClient.storage
+    .from("product-images")
+    .upload(fileName, file, { upsert: false });
+
+  if (error) throw error;
+
+  const { data } = supabaseClient.storage
+    .from("product-images")
+    .getPublicUrl(fileName);
+
+  return data.publicUrl;
+}
+
+document.getElementById("image_file").addEventListener("change", event => {
+  const file = event.target.files[0];
+
+  if (file) {
+    preview.src = URL.createObjectURL(file);
+    preview.style.display = "block";
+  }
+});
+
+async function refreshSession() {
+  const { data, error } = await supabaseClient.auth.getSession();
+
+  if (error) {
+    showMessage(loginMessage, "Session error: " + error.message);
+    return;
+  }
+
+  setSignedIn(!!data.session);
+
+  if (data.session) {
+    loadProducts();
+  }
+}
+
+document.getElementById("loginForm").addEventListener("submit", async event => {
+  event.preventDefault();
+  showMessage(loginMessage, "Signing in...");
+
+  const { error } = await supabaseClient.auth.signInWithPassword({
+    email: document.getElementById("email").value.trim(),
+    password: document.getElementById("password").value
+  });
+
+  if (error) {
+    showMessage(loginMessage, "Failed: " + error.message);
+    return;
+  }
+
+  setSignedIn(true);
+  loadProducts();
+});
+
+document.getElementById("logoutButton").addEventListener("click", async () => {
+  const { error } = await supabaseClient.auth.signOut();
+
+  if (error) {
+    showMessage(adminMessage, "Sign out failed: " + error.message);
+    return;
+  }
+
+  setSignedIn(false);
+});
+
+function resetForm() {
+  productForm.reset();
+
+  document.getElementById("productId").value = "";
+  document.getElementById("image_url").value = "";
+  document.getElementById("description").value = "";
+  document.getElementById("featured").checked = false;
+
+  preview.style.display = "none";
+  preview.removeAttribute("src");
+
+  document.getElementById("saveButton").textContent = "+ Add";
+  cancelEdit.hidden = true;
+}
+
+cancelEdit.addEventListener("click", resetForm);
+
+productForm.addEventListener("submit", async event => {
+  event.preventDefault();
+
+  const id = document.getElementById("productId").value;
+
+  try {
+    let imageUrl = document.getElementById("image_url").value;
+    const file = document.getElementById("image_file").files[0];
+
+    if (file) {
+      showMessage(adminMessage, "Uploading image...");
+      imageUrl = await uploadImage(file);
+    }
+
+    if (!imageUrl && !id) {
+      showMessage(adminMessage, "Please select an image");
+      return;
+    }
+
+    const product = {
+      name: document.getElementById("name").value.trim(),
+
+      // NEW: Save description in Supabase
+      description: document.getElementById("description").value.trim(),
+
+      price: Number(document.getElementById("price").value),
+      category: document.getElementById("category").value,
+      selar_affiliate_link: document.getElementById("selar_link").value.trim(),
+      image_url: imageUrl,
+      featured: document.getElementById("featured").checked,
+      published: true,
+      stock: 100
+    };
+
+    showMessage(adminMessage, "Saving...");
+
+    const result = id
+      ? await supabaseClient.from("products").update(product).eq("id", id)
+      : await supabaseClient.from("products").insert(product);
+
+    if (result.error) throw result.error;
+
+    showMessage(adminMessage, id ? "Updated!" : "Added!");
+
+    resetForm();
+    await loadProducts();
+
+  } catch (error) {
+    showMessage(adminMessage, "Error: " + error.message);
+  }
+});
+
+async function loadProducts() {
+  productRows.innerHTML = "<tr><td colspan='7'>Loading...</td></tr>";
+
+  const { data, error } = await supabaseClient
+    .from("products")
+    .select("id,name,description,price,category,selar_affiliate_link,image_url,featured")
+    .order("created_at", { ascending: false });
+
+  if (error) {
+    showMessage(adminMessage, "Load failed: " + error.message);
+    productRows.innerHTML = "";
+    return;
+  }
+
+  productRows.innerHTML = "";
+
+  if (!data || data.length === 0) {
+    productRows.innerHTML = "<tr><td colspan='7'>No products</td></tr>";
+    return;
+  }
+
+  data.forEach(product => {
+    const tr = document.createElement("tr");
+
+    const imageCell = document.createElement("td");
+    const img = document.createElement("img");
+    img.src = product.image_url || "";
+    img.alt = product.name || "Product";
+    img.className = "img-prev";
+    imageCell.appendChild(img);
+
+    const nameCell = document.createElement("td");
+    nameCell.textContent = product.name || "";
+
+    const categoryCell = document.createElement("td");
+    categoryCell.textContent = product.category || "";
+
+    const priceCell = document.createElement("td");
+    priceCell.textContent = formatMoney(product.price);
+
+    const linkCell = document.createElement("td");
+    linkCell.textContent = product.selar_affiliate_link || "";
+    linkCell.style.maxWidth = "150px";
+    linkCell.style.whiteSpace = "nowrap";
+    linkCell.style.overflow = "hidden";
+    linkCell.style.textOverflow = "ellipsis";
+
+    const featuredCell = document.createElement("td");
+    featuredCell.textContent = product.featured ? "YES" : "NO";
+
+    const actionsCell = document.createElement("td");
+
+    const editButton = document.createElement("button");
+    editButton.textContent = "Edit";
+    editButton.className = "secondary";
+    editButton.style.marginRight = "5px";
+
+    editButton.onclick = () => {
+      document.getElementById("productId").value = product.id;
+      document.getElementById("name").value = product.name || "";
+
+      // NEW: Load saved description into the input
+      document.getElementById("description").value =
+        product.description || "";
+
+      document.getElementById("price").value = product.price;
+      document.getElementById("category").value =
+        product.category || "Freelancing";
+      document.getElementById("selar_link").value =
+        product.selar_affiliate_link || "";
+      document.getElementById("image_url").value =
+        product.image_url || "";
+      document.getElementById("featured").checked =
+        !!product.featured;
+
+      preview.src = product.image_url || "";
+      preview.style.display = product.image_url ? "block" : "none";
+
+      document.getElementById("saveButton").textContent = "Update";
+      cancelEdit.hidden = false;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    const deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.className = "danger";
+
+    deleteButton.onclick = async () => {
+      if (!confirm(`Delete "${product.name}"?`)) return;
+
+      showMessage(adminMessage, "Deleting...");
+
+      const { error } = await supabaseClient
+        .from("products")
+        .delete()
+        .eq("id", product.id);
+
+      if (error) {
+        showMessage(
+          adminMessage,
+          "Delete failed: " + error.message + " (check RLS policies)"
+        );
+      } else {
+        showMessage(adminMessage, "Deleted");
+        loadProducts();
+      }
+    };
+
+    actionsCell.append(editButton, deleteButton);
+
+    tr.append(
+      imageCell,
+      nameCell,
+      categoryCell,
+      priceCell,
+      linkCell,
+      featuredCell,
+      actionsCell
+    );
+
+    productRows.appendChild(tr);
+  });
+}
+
+supabaseClient.auth.onAuthStateChange((_event, session) => {
+  setSignedIn(!!session);
+});
+
+refreshSession();
+</script>
+
+</body>
+</html>

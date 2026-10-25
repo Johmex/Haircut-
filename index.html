@@ -1,0 +1,1072 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="Explore digital learning resources, online business strategies, and educational products with Wealth Path Academy.">
+
+  <title>Wealth Path Academy 2026</title>
+
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --card: #141414;
+      --gold: #f7d774;
+      --gold2: #d7ad52;
+      --muted: #9aa3a0;
+      --border: #292929;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      background: var(--bg);
+      color: white;
+    }
+
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    /* NAVIGATION */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      padding: 15px 5%;
+      background: rgba(10, 10, 10, 0.96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #302817;
+    }
+
+    .brand {
+      color: var(--gold);
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 800;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: white;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .nav-link {
+      color: #ddd;
+      text-decoration: none;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--gold);
+    }
+
+    .nav-join {
+      background: var(--gold);
+      color: #111;
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      white-space: nowrap;
+    }
+
+    .menu-toggle {
+      display: none;
+      color: var(--gold);
+      background: transparent;
+      border: 1px solid var(--gold2);
+      border-radius: 8px;
+      padding: 7px 12px;
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 65px 5%;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+      gap: 30px;
+      background:
+        radial-gradient(
+          circle at 20% 10%,
+          #2a2410,
+          transparent 55%
+        );
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: clamp(2.1rem, 5vw, 3.5rem);
+      line-height: 1.12;
+      margin: 0;
+    }
+
+    .hero h2 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      color: var(--muted);
+      line-height: 1.7;
+      max-width: 550px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 12px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .btn-gold,
+    .btn-outline {
+      display: inline-block;
+      padding: 12px 18px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: #0a0a0a;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gold2);
+      color: var(--gold);
+    }
+
+    .live-box {
+      background: var(--card);
+      border: 1px solid #383020;
+      border-radius: 16px;
+      padding: 24px;
+    }
+
+    .live-badge {
+      display: inline-block;
+      background: var(--gold);
+      color: #000;
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 5px 9px;
+      border-radius: 20px;
+    }
+
+    .live-box h3 {
+      margin-top: 25px;
+      margin-bottom: 8px;
+    }
+
+    .live-box .highlight {
+      color: var(--gold);
+      font-size: 1.5rem;
+      font-weight: 800;
+    }
+
+    .note {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* SECTION HEADINGS */
+
+    .section-wrap {
+      padding: 35px 5% 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin: 0 0 8px;
+      font-size: 1.7rem;
+    }
+
+    .sub {
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.6;
+      margin: 0 0 22px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(160px, 1fr)
+      );
+      gap: 14px;
+    }
+
+    .cat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .cat-card:hover {
+      border-color: var(--gold2);
+      transform: translateY(-2px);
+    }
+
+    .cat-card.active {
+      border-color: var(--gold);
+      background: #211d11;
+    }
+
+    .cat-icon {
+      font-size: 1.5rem;
+      margin-bottom: 10px;
+    }
+
+    .cat-card b {
+      display: block;
+      margin-bottom: 7px;
+    }
+
+    .cat-count {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    /* SEARCH AND FILTER */
+
+    .tools {
+      padding: 20px 5% 5px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    input,
+    select {
+      font: inherit;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: white;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: var(--gold2);
+    }
+
+    #search {
+      flex: 1;
+      min-width: 180px;
+    }
+
+    #category {
+      min-width: 170px;
+      max-width: 100%;
+    }
+
+    /* PRODUCTS */
+
+    .status {
+      padding: 12px 5% 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .products {
+      padding: 20px 5% 55px;
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+      );
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #252525;
+      border-radius: 14px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+      min-width: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: #514326;
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #1a1a1a;
+      display: block;
+    }
+
+    .card-content {
+      padding: 16px;
+    }
+
+    .card h3 {
+      margin: 0 0 9px;
+      font-size: 1.05rem;
+      overflow-wrap: anywhere;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      white-space: pre-line;
+      overflow-wrap: anywhere;
+    }
+
+    .price {
+      color: var(--gold);
+      font-weight: 800;
+      margin: 14px 0;
+      font-size: 1.1rem;
+    }
+
+    .get-btn {
+      display: block;
+      text-align: center;
+      background: var(--gold);
+      color: #000;
+      padding: 12px;
+      border-radius: 9px;
+      font-weight: 800;
+      text-decoration: none;
+      margin-top: 12px;
+    }
+
+    .get-btn:hover,
+    .nav-join:hover,
+    .btn-gold:hover {
+      background: var(--gold2);
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 35px 15px;
+      border: 1px dashed #333;
+      border-radius: 12px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    /* ABOUT / CONTACT */
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(
+        auto-fit,
+        minmax(230px, 1fr)
+      );
+      gap: 16px;
+      padding-bottom: 35px;
+    }
+
+    .info-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 13px;
+      padding: 22px;
+    }
+
+    .info-card h3 {
+      color: var(--gold);
+      margin-top: 0;
+    }
+
+    .info-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.93rem;
+    }
+
+    .info-card a {
+      color: var(--gold);
+      overflow-wrap: anywhere;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 28px 5%;
+      background: #0f0f0f;
+      color: var(--muted);
+      border-top: 1px solid #222;
+      font-size: 0.85rem;
+      line-height: 1.9;
+    }
+
+    footer a {
+      color: var(--gold);
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .site-header {
+        flex-wrap: wrap;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-menu {
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        width: 100%;
+        padding-top: 8px;
+      }
+
+      .nav-menu.open {
+        display: flex;
+      }
+
+      .nav-link {
+        padding: 13px 5px;
+        border-bottom: 1px solid #242424;
+      }
+
+      .nav-join {
+        text-align: center;
+        margin-top: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 45px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .brand {
+        font-size: 1.05rem;
+      }
+
+      .hero h2 {
+        font-size: 2.15rem;
+      }
+
+      .tools {
+        flex-direction: column;
+      }
+
+      #search,
+      #category {
+        width: 100%;
+      }
+
+      .products {
+        grid-template-columns: 1fr;
+      }
+
+      .card img {
+        height: 220px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+
+  <header class="site-header">
+    <a href="index.html" class="brand">
+      Wealth Path <span>Academy</span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menuToggle"
+      aria-label="Open navigation menu"
+      aria-expanded="false"
+      aria-controls="navMenu"
+      type="button">
+      ☰
+    </button>
+
+    <nav class="nav-menu" id="navMenu">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="#categories" class="nav-link">Categories</a>
+      <a href="#products" class="nav-link">Products</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#contact" class="nav-link">Contact</a>
+
+      <a
+        href="https://t.me/wealthpathacademy"
+        class="nav-join"
+        target="_blank"
+        rel="noopener noreferrer">
+        Join Telegram ↗
+      </a>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+
+  <section class="hero" id="home">
+    <div>
+      <div class="eyebrow">Learn • Build • Grow</div>
+
+      <h2>
+        Build Your Wealth Path
+        <span>with Online Business Education</span>
+      </h2>
+
+      <p>
+        Explore educational resources, digital products, and
+        practical strategies for learning about online business,
+        freelancing, digital marketing, and emerging technology.
+        Start learning at your own pace.
+      </p>
+
+      <div class="hero-btns">
+        <a href="#products" class="btn-gold">
+          Explore Products →
+        </a>
+
+        <a href="#categories" class="btn-outline">
+          View Categories
+        </a>
+      </div>
+    </div>
+
+    <div class="live-box">
+      <span class="live-badge">2026 LEARNING HUB</span>
+
+      <h3>Invest in Your Knowledge</h3>
+
+      <div class="highlight">Learn. Practice. Improve.</div>
+
+      <p>
+        Discover resources that can help you develop useful
+        digital skills and understand different online business
+        models.
+      </p>
+
+      <p class="note">
+        Results depend on your knowledge, effort, experience,
+        market conditions, and other factors. No income is guaranteed.
+      </p>
+    </div>
+  </section>
+
+  <!-- CATEGORIES -->
+
+  <section class="section-wrap" id="categories">
+    <h2 class="section-title">Explore Categories</h2>
+
+    <p class="sub">
+      Choose a learning area that interests you.
+    </p>
+
+    <div class="categories" id="categoryGrid"></div>
+  </section>
+
+  <!-- SEARCH AND FILTER -->
+
+  <section id="products">
+    <div class="tools">
+      <input
+        id="search"
+        type="search"
+        placeholder="Search products..."
+        aria-label="Search products">
+
+      <select id="category" aria-label="Filter by category">
+        <option value="">All Categories</option>
+      </select>
+    </div>
+
+    <p class="status" id="status" role="status" aria-live="polite">
+      Loading products...
+    </p>
+
+    <main class="products" id="productGrid"></main>
+  </section>
+
+  <!-- ABOUT -->
+
+  <section class="section-wrap" id="about">
+    <h2 class="section-title">About Wealth Path Academy</h2>
+
+    <p class="sub">
+      Your learning journey starts with the right information.
+    </p>
+
+    <div class="info-grid">
+      <article class="info-card">
+        <h3>Our Mission</h3>
+        <p>
+          Wealth Path Academy helps learners discover educational
+          resources related to digital skills, online business,
+          marketing, and personal development.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Learn at Your Pace</h3>
+        <p>
+          Browse available resources, compare products, and choose
+          educational materials that fit your interests and goals.
+        </p>
+      </article>
+
+      <article class="info-card">
+        <h3>Responsible Learning</h3>
+        <p>
+          We encourage research, practical learning, and careful
+          decision-making. Buying a course or book does not guarantee
+          business success or financial returns.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section class="section-wrap" id="contact">
+    <h2 class="section-title">Get in Touch</h2>
+
+    <p class="sub">
+      Have a question about our learning resources?
+    </p>
+
+    <div class="info-grid">
+      <article class="info-card">
+        <h3>Join Our Community</h3>
+        <p>
+          Join our Telegram channel to follow updates and discover
+          new learning resources.
+        </p>
+
+        <a
+          href="https://t.me/wealthpathacademy"
+          target="_blank"
+          rel="noopener noreferrer">
+          Visit Wealth Path Academy on Telegram →
+        </a>
+      </article>
+
+      <article class="info-card">
+        <h3>Product Questions</h3>
+        <p>
+          For questions about a specific product, check the
+          product information and the seller's official page
+          before making a purchase.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+    <p>
+      © <span id="year">2026</span> Wealth Path Academy.
+      All rights reserved.
+    </p>
+
+    <p>
+      <a href="#home">Home</a> |
+      <a href="#about">About</a> |
+      <a href="#contact">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="disclaimer.html">Disclaimer</a>
+    </p>
+
+    <p>
+      Educational content only. Online business and trading involve
+      risks. No earnings or investment returns are guaranteed.
+    </p>
+
+    <p>
+      Telegram:
+      <a
+        href="https://t.me/wealthpathacademy"
+        target="_blank"
+        rel="noopener noreferrer">
+        @wealthpathacademy
+      </a>
+    </p>
+  </footer>
+
+  <!-- SUPABASE -->
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+
+  <script>
+    const productGrid = document.getElementById("productGrid");
+    const statusText = document.getElementById("status");
+    const searchInput = document.getElementById("search");
+    const categorySelect = document.getElementById("category");
+    const categoryGrid = document.getElementById("categoryGrid");
+
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+
+    let allProducts = [];
+    let activeCat = "";
+
+    // MOBILE NAVIGATION
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation menu" : "Open navigation menu"
+      );
+
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation menu");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // FOOTER YEAR
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+    // FORMAT NAIRA
+
+    function formatMoney(value) {
+      return new Intl.NumberFormat("en-NG", {
+        style: "currency",
+        currency: "NGN",
+        maximumFractionDigits: 2
+      }).format(Number(value || 0));
+    }
+
+    // DEFAULT CATEGORIES IF NO PRODUCTS HAVE LOADED
+
+    const defaultCategories = [
+      "Freelancing",
+      "Forex Education",
+      "Digital Marketing",
+      "Content Creation",
+      "AI Tools",
+      "Online Business",
+      "Dropshipping",
+      "Personal Development"
+    ];
+
+    const categoryIcons = {
+      "Freelancing": "💻",
+      "Forex Education": "📈",
+      "Digital Marketing": "📣",
+      "Content Creation": "🎬",
+      "AI Tools": "🤖",
+      "Online Business": "🌐",
+      "Dropshipping": "📦",
+      "Personal Development": "🚀"
+    };
+
+    // RENDER CATEGORIES
+
+    function renderCategories() {
+      const actualCategories = [
+        ...new Set(
+          allProducts
+            .map(product => product.category)
+            .filter(Boolean)
+        )
+      ].sort();
+
+      const categories = actualCategories.length
+        ? actualCategories
+        : defaultCategories;
+
+      categoryGrid.innerHTML = "";
+      categorySelect.innerHTML =
+        '<option value="">All Categories</option>';
+
+      categories.forEach(cat => {
+        const card = document.createElement("div");
+
+        card.className =
+          "cat-card" + (activeCat === cat ? " active" : "");
+
+        const icon = document.createElement("div");
+        icon.className = "cat-icon";
+        icon.textContent = categoryIcons[cat] || "📚";
+
+        const name = document.createElement("b");
+        name.textContent = cat;
+
+        const count = document.createElement("div");
+        count.className = "cat-count";
+
+        const total = allProducts.filter(
+          product => product.category === cat
+        ).length;
+
+        count.textContent =
+          total + (total === 1 ? " resource" : " resources");
+
+        card.append(icon, name, count);
+
+        card.addEventListener("click", () => {
+          activeCat = activeCat === cat ? "" : cat;
+          categorySelect.value = activeCat;
+          renderCategories();
+          renderProducts();
+          document.getElementById("products").scrollIntoView({
+            behavior: "smooth"
+          });
+        });
+
+        categoryGrid.appendChild(card);
+
+        if (actualCategories.length) {
+          const option = document.createElement("option");
+          option.value = cat;
+          option.textContent = cat;
+          categorySelect.appendChild(option);
+        }
+      });
+
+      categorySelect.value = activeCat;
+    }
+
+    // RENDER PRODUCTS
+
+    function renderProducts() {
+      const term = searchInput.value.trim().toLowerCase();
+      const selectedCategory = categorySelect.value || activeCat;
+
+      const filtered = allProducts.filter(product => {
+        const name = (product.name || "").toLowerCase();
+        const description =
+          (product.description || "").toLowerCase();
+
+        const matchesSearch =
+          name.includes(term) || description.includes(term);
+
+        const matchesCategory =
+          !selectedCategory ||
+          product.category === selectedCategory;
+
+        return matchesSearch && matchesCategory;
+      });
+
+      productGrid.innerHTML = "";
+
+      if (!filtered.length) {
+        const empty = document.createElement("div");
+        empty.className = "empty-state";
+
+        empty.textContent = allProducts.length
+          ? "No products match your search. Try another keyword or category."
+          : "No published products are available yet. Please check back later.";
+
+        productGrid.appendChild(empty);
+
+        statusText.textContent = allProducts.length
+          ? "No matching products."
+          : "No published products found.";
+
+        return;
+      }
+
+      statusText.textContent =
+        filtered.length +
+        (filtered.length === 1 ? " product found" : " products found");
+
+      filtered.forEach(product => {
+        const card = document.createElement("article");
+        card.className = "card";
+
+        if (product.image_url) {
+          const img = document.createElement("img");
+          img.src = product.image_url;
+          img.alt = product.name || "Product image";
+          img.loading = "lazy";
+
+          img.onerror = () => img.remove();
+
+          card.appendChild(img);
+        }
+
+        const content = document.createElement("div");
+        content.className = "card-content";
+
+        const title = document.createElement("h3");
+        title.textContent = product.name || "Untitled product";
+
+        const description = document.createElement("p");
+        description.textContent =
+          product.description || "Explore this learning resource.";
+
+        const price = document.createElement("div");
+        price.className = "price";
+        price.textContent = formatMoney(product.price);
+
+        content.append(title, description, price);
+
+        const productLink = (
+          product.selar_affiliate_link || ""
+        ).trim();
+
+        const button = document.createElement("a");
+        button.className = "get-btn";
+        button.textContent = "Get Access →";
+
+        if (
+          productLink &&
+          /^https?:\/\//i.test(productLink)
+        ) {
+          button.href = productLink;
+          button.target = "_blank";
+          button.rel = "noopener noreferrer";
+        } else {
+          button.href = "#";
+          button.addEventListener("click", event => {
+            event.preventDefault();
+            alert("The purchase link for this product is not available yet.");
+          });
+        }
+
+        content.appendChild(button);
+        card.appendChild(content);
+        productGrid.appendChild(card);
+      });
+    }
+
+    // LOAD PUBLISHED PRODUCTS FROM SUPABASE
+
+    async function loadProducts() {
+      if (
+        typeof SUPABASE_URL === "undefined" ||
+        typeof SUPABASE_PUBLISHABLE_KEY === "undefined" ||
+        typeof supabaseClient === "undefined" ||
+        !SUPABASE_URL ||
+        !SUPABASE_PUBLISHABLE_KEY ||
+        SUPABASE_URL.includes("YOUR_") ||
+        SUPABASE_PUBLISHABLE_KEY.includes("YOUR_")
+      ) {
+        statusText.textContent =
+          "Supabase configuration is missing. Check config.js.";
+        renderCategories();
+        return;
+      }
+
+      statusText.textContent = "Loading products...";
+
+      try {
+        const { data, error } = await supabaseClient
+          .from("products")
+          .select(
+            "id,name,description,price,image_url,category,stock,published,selar_affiliate_link"
+          )
+          .eq("published", true)
+          .order("created_at", { ascending: false });
+
+        if (error) {
+          console.error("Supabase product loading error:", error);
+
+          statusText.textContent =
+            "Could not load products: " + error.message;
+
+          renderCategories();
+          return;
+        }
+
+        allProducts = data || [];
+
+        renderCategories();
+        renderProducts();
+
+      } catch (error) {
+        console.error("Unexpected loading error:", error);
+
+        statusText.textContent =
+          "An unexpected error occurred while loading products.";
+        renderCategories();
+      }
+    }
+
+    // SEARCH AND FILTER EVENTS
+
+    searchInput.addEventListener("input", renderProducts);
+
+    categorySelect.addEventListener("change", () => {
+      activeCat = categorySelect.value;
+      renderCategories();
+      renderProducts();
+    });
+
+    // START
+
+    loadProducts();
+  </script>
+
+</body>
+</html>
